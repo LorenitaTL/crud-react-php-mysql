@@ -1,0 +1,35 @@
+.list-products {
+  margin: 0rem 5rem 0rem 5rem;
+  @include background(#ebebeb);
+  @include shadow($light-grey);
+  .head {
+    display: flex;
+    @include background($secondary);
+    color: white;
+    padding: 0.5rem;
+  }
+}
+
+.small {
+  width: 15%;
+}
+.big {
+  width: 50%;
+}
+.product {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  .actions {
+    display: flex;
+
+    button {
+      margin: 5px;
+      border: none;
+      color: $green;
+      @include background(transparent);
+    }
+  }
+}

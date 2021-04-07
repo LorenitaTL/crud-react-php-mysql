@@ -1,0 +1,36 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0rem 1rem 0rem;
+
+  input {
+    background-color: white;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    margin: 0;
+    padding: 0rem 1rem 0rem 1rem;
+    @include shadow($light-grey);
+    border-radius: 20px;
+    font-size: large;
+  }
+
+  input[type="text"]:hover {
+    @include shadow($green-light);
+  }
+  input[type="text"]:focus {
+    @include shadow($green-light);
+    outline-width: 0px;
+  }
+
+  button {
+    @include background($primary);
+    color: white;
+    border: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    @include shadow($light-grey);
+  }
+}

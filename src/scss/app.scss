@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixins";
+@import "./components/navbar";
+@import "./components/search_bar";
+@import "./components/list_products";
+@import "./components/modal";
+
+@import "./components/categories";
+html {
+  @include box-sizing(border-box);
+  font-family: $font-family;
+}
+*,
+*:after,
+*:before {
+  @include box-sizing(inherit);
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $background;
+}
+
+.title {
+  color: $primary;
+  text-align: center;
+}
+
+.my-1 {
+  margin: 1rem 0rem 1rem 0rem;
+}
