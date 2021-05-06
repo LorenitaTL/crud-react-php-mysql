@@ -2,7 +2,7 @@ import React from "react";
 
 import { Product } from "./Product";
 
-export const ListProducts = () => {
+export const ListProducts = ({ products, value }) => {
   return (
     <div className="list-products">
       <div className="head">
@@ -26,10 +26,17 @@ export const ListProducts = () => {
         </div>
       </div>
       <div className="content">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products
+          .filter((product) => {
+            if (!value) return true;
+            if (product.name.toUpperCase().includes(value)) {
+              return true;
+            }
+            return false;
+          })
+          .map((product, index) => (
+            <Product product={product} key={index} />
+          ))}
       </div>
     </div>
   );

@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/git.svg";
 
 export const Header = () => {
   return (
     <div className="navbar">
-      <div>
-        <img src={logo} alt="" />
-      </div>
+      <div></div>
       <div className="menu">
         <Link to="/">
           <div className="item option">

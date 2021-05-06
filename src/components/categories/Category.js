@@ -1,22 +1,31 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { categoryActive } from "../../actions/categories";
+import { uiShowForm } from "../../actions/ui";
 
-export const Category = () => {
+export const Category = ({ category }) => {
+  const dispatch = useDispatch();
+
+  const setActiveCategory = (c) => {
+    dispatch(categoryActive(c));
+    dispatch(uiShowForm());
+  };
   return (
     <div className="category">
       <img
-        src={
-          "https://www.consultancy.uk/illustrations/news/spotlight/2019-09-26-084805645-Five-top-trends-impacting-the-food-and-beverage-industries.spot.jpg"
-        }
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src =
+            "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
+        }}
+        src={`${process.env.REACT_APP_API_URL}${category.photo}`}
         alt=""
       />
-      <h3>Name</h3>
-      <p>Description</p>
+      <h3>{category.name}</h3>
+      <p>{category.description}</p>
       <div className="options">
-        <button id="edit">
+        <button id="edit" onClick={() => setActiveCategory(category)}>
           <i className="fas fa-edit fa-2x"></i>
-        </button>
-        <button id="delete">
-          <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
         </button>
       </div>
     </div>

@@ -76,31 +76,30 @@
     text-align: center;
     margin: 0.5rem;
 
-    h2{
-      color: darken($dark-grey,30);
+    h2 {
+      color: darken($dark-grey, 30);
     }
     .items {
       display: flex;
       flex-wrap: wrap;
-      
+
       .category {
         width: 15rem;
-        height: auto;
+        height: 20rem;
         margin: 0.5rem;
         color: white;
         @include background($green);
         @include shadow($dark-grey);
         border-radius: 10px;
 
-        img{
-          height: 50%;
+        img {
+          height: 60%;
           width: 100%;
           object-fit: cover;
         }
 
-        .options{
-
-          button{
+        .options {
+          button {
             margin: 0.5rem;
             border: none;
             color: white;
